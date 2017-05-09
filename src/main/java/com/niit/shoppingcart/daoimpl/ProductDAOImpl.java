@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +50,15 @@ public class ProductDAOImpl implements ProductDAO{
 	}
 	public Product getProductById(String id) {
 		return (Product)getCurrentSession().get(Product.class, id);
+	}
+
+	public List<Product> getAllProductsByCategoryID(String categoryId) {
+		// TODO Auto-generated method stub
+		
+		Query query = getCurrentSession().createQuery("from Product where categoryID = ?");
+	    return (List<Product>) query.setString(0, categoryId);
+		
+	
 	}
 
 	
