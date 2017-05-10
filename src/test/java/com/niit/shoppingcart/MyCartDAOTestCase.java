@@ -32,16 +32,16 @@ public class MyCartDAOTestCase {
 		myCart= (MyCart)context.getBean("myCart");
 		
 	}
-	/*
+	
 	@Test
 	public void createMyCartTestCase(){
 		
-		myCart.setId("Cart02");
-		myCart.setProduct_name("Necklace");
+		myCart.setId("Cart05");
+		myCart.setProduct_name("Necklace01");
 		myCart.setUser_id("sumaiya");
-		myCart.setQuantity(01);
-		myCart.setStatus("Y");
-		myCart.setDate_added(date_added);
+		//myCart.setQuantity(01);
+		//myCart.setStatus("Y");
+	//	myCart.setDate_added(date_added);
 		myCart.setPrice(15000);
 		
 		
@@ -69,12 +69,20 @@ public class MyCartDAOTestCase {
 		List<MyCart> myCartList = myCartDAO.list();
 		assertEquals("MyCart List test case ", 3, myCartList.size());
 	} 
-	*/
 	
 	@Test
 	public void getMyCartByIdTestCase(){
 		MyCart p = myCartDAO.getMyCartById("Cart02");
 		assertEquals("Get MyCart By id ", "Necklace", p.getProduct_name());
 	} 
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	public void getCartAmountTestCase(){
+		
+		double totalPrice = myCartDAO.getTotalAmount("sumaiya");
+		//System.out.println("totalPrice -----> " + totalPrice);
+		assertEquals(25000, totalPrice);
+	}
 	
 }

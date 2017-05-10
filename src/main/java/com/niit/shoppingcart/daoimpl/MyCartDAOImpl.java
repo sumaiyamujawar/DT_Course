@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +50,13 @@ public class MyCartDAOImpl implements MyCartDAO{
 	}
 	public MyCart getMyCartById(String id) {
 		return (MyCart)getCurrentSession().get(MyCart.class, id);
+	}
+
+	public double getTotalAmount(String userID) {
+		// TODO Auto-generated method stub
+		Query query =  getCurrentSession().createQuery("SELECT sum(price) from MyCart where user_id = ?");
+		query.setString(0, userID);		
+		return (Double) query.uniqueResult();
 	}
 
 	
