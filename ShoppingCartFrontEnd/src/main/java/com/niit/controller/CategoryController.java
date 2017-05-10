@@ -48,7 +48,7 @@ public class CategoryController {
 			
 			//Before calling save check if exists
 			if(categoryDAO.getCategoryByID(id) !=null){
-				mv.addObject("message","Catgory already exist" + id);
+				mv.addObject("message","Category already exist" + id);
 				return mv;
 			} else {
 				categoryDAO.save(category);

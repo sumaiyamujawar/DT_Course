@@ -9,17 +9,18 @@
 </head>
 <body>
 
-<h2>Manage Categories</h2>
+<h3>Add New Categories</h3>
 <div id="CreateCategory">
 	<form action="manage_category_add" method="get">
-	<input type="text" name="id">
-	<input type="text" name="name">
-	<input type="text" name="description">
+	ID: <input type="text" name="id">
+	Category Name:<input type="text" name="name">
+	Category Description: <input type="text" name="description">
 	<input type="submit" value="Create Category">
 	</form>
 </div>
 
-<h2>Delete/Update the Categories</h2>
+
+<h3>Delete/Update the Categories</h3>
 <div id="UpdateCategory">
 <form action="manage_category_update" method="get">
 	<input type="text" name="id" value="${selectedCategory.id}">
@@ -28,27 +29,27 @@
 	<input type="submit" value="Update Category">
 </form>
 </div>
-
-
+<br>
+<h3>Category List</h3>
 <div id="ShowCategories">
-	<table>
+	<table border="1">
 	<thead>
 	<tr>
-	<td>Category ID</td>
-	<td>Category Name</td>
-	<td>Category Description</td>
-	<td>Action</td>
+	<td><b>Category ID</b></td>
+	<td><b>Category Name</b></td>
+	<td><b>Category Description</td>
+	<td><b>Action</b></td>
 	</tr>
 	</thead>
-	<c:forEach var="category" items="${categoryList}"></c:forEach>
+	<c:forEach var="category" items="${categoryList}">
 	<tr>
 	<td>${category.id}</td>
 	<td>${category.name}</td>
 	<td>${category.description}</td>
-	
 	<td><a href="manage_category_delete/${category.id}"> Delete</a>
 		<a href="manage_category_edit/${category.id}"> Edit</a>
 	</td> 
+	</c:forEach>
 	
 	</tr>
 	

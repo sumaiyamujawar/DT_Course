@@ -8,9 +8,9 @@
 </head>
 <body>
 
-<a href="manageCategories">Manage Categories</a> &nbps;
-<a href="manageSupplier">Manage Suppliers</a>
-<a href="manageProducts">Manage Products</a>
-${message}
+<a href="manageCategories"><b>Manage Categories</b></a> &nbsp;
+<a href="manageSupplier"><b>Manage Suppliers</b></a> &nbsp;
+<a href="manageProducts"><b>Manage Products</b></a> &nbsp;
+<%-- ${message} --%>
 </body>
 </html>

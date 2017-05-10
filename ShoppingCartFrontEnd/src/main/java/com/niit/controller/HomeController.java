@@ -34,7 +34,7 @@ public class HomeController {
 		ModelAndView mv  = new ModelAndView("Home");
 		//model.addAttribute("message", "Thank you for visiting Shopping Cart!");
 		//return "Home";
-		mv.addObject("message", "Thank you for visiting Shopping Cart!");
+		//mv.addObject("message", "Thank you for visiting Shopping Cart!");
 		
 		//get all categories
 		List<Category> categoryList = categoryDAO.list();

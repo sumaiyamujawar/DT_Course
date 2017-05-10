@@ -23,9 +23,9 @@
 	</center>
 	</h2>
 	
-	<a href="LoginPage">  Login </a>
-	<a href="RegistrationPage"> Register </a>
-	${message}
+	<a href="LoginPage"> <b>Login</b> </a> &nbsp; &nbsp;
+	<a href="RegistrationPage"> <b> Register</b>  </a>
+	<br>${message} 
 	<hr color="green">
 	
 	<!-- Add menu.jsp -->
@@ -33,7 +33,7 @@
     <jsp:include page="Menu.jsp"></jsp:include>
     <hr>
     <!-- INCLUDE PRODUCTS -->
-    <jsp:include page="AllProducts.jsp"></jsp:include>
+   <%--  <jsp:include page="AllProducts.jsp"></jsp:include> --%>
     
     <!--if admin show adminhome.jsp  -->
     <c:if test="${isAdmin=='true'}">
@@ -52,9 +52,7 @@
 	 <c:if test="${isAdminClickedProducts=='true'}">
 		<jsp:include page="admin/Product.jsp"></jsp:include>
 	</c:if>
-	
-	
-	
+		
 
 	<c:if test="${isUserClickedLogin=='true'}">
 		<jsp:include page="Login.jsp"></jsp:include>
