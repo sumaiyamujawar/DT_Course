@@ -29,14 +29,14 @@ public class ProductDAOTestCase {
 		product= (Product)context.getBean("product");
 		
 	}
-	/*
+	
 	@Test
 	public void createProductTestCase(){
-		product.setId("P03");
-		product.setName("Bridal Collection");
-		product.setDescription("Bridal Collection");
-		product.setPrice(150000);
-		product.setCategory_id("cat02");
+		product.setId("P06");
+		product.setName("Niloufer Collection");
+		product.setDescription("Niloufer Collection");
+		product.setPrice(21000);
+		product.setCategory_id("cat05");
 		product.setSupplier_id("supp01");
 		
 		boolean flag = productDAO.save(product);
@@ -44,7 +44,7 @@ public class ProductDAOTestCase {
 		assertEquals("create Product ", true, flag);
 		
 	} 
-	
+	/*
 	@Test
 	public void updateProductTestCase(){
 		product.setId("P01");

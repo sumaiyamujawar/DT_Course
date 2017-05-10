@@ -16,14 +16,17 @@
     <ul class="nav navbar-nav">
     
     <c:forEach var="category" items="${categoryList}">
-    
-    
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">${category.name}<span class="caret"></span></a>
-        <ul class="dropdown-menu">
         
-        <c:forEach var="product" items="${productList}">
-        <li><a href="#">${product.name}</a></li>        
-        </c:forEach>
+      <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">${category.name}<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        
+      <c:forEach var="product" items="${productList}">
+      <c:if test="${product.category_id == category.id}">
+      	<li><a href="#">${product.name}</a></li>
+      </c:if> 
+    <%--     <li><a href="#">${product.name}</a></li>    --%>     
+      </c:forEach>
         
         <!-- 
           <li><a href="#">Mobile</a></li>
@@ -56,11 +59,6 @@
     </ul> -->
   </div>
 </nav>
-  
-<div class="container">
-  <h3>Navbar With Dropdown</h3>
-  <p>This example adds a dropdown menu for the "Page 1" button in the navigation bar.</p>
-</div>
 
 </body>
 </html>
